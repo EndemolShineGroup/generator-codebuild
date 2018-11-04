@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "lib": [
+      "es2015"
+    ],
+    "module": "commonjs",
+    "outDir": "generators/",
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "sourceMap": true,
+    "strict": true,
+    "target":"es2015"
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/templates/*",
+    "**/*.spec.ts",
+    "**/*.integ.ts",
+    "**/__fixtures__/*.*",
+    "src/setupTests.ts"
+  ]
+}
