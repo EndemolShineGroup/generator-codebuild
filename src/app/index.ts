@@ -13,12 +13,12 @@ export default class NodeJsTypeScriptGenerator extends Generator {
 
   async initializing() {
     this.log('A few questions about your project...');
-    this.log('Note: Project Name will also be used for Git URLs');
   }
 
   async prompting() {
     this.answers = await this.prompt(prompts);
 
     this.composeWith(require.resolve('../cloudformation'), this.answers);
+    this.composeWith(require.resolve('../project'), this.answers);
   }
 }
