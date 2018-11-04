@@ -21,8 +21,4 @@ export default class NodeJsTypeScriptGenerator extends Generator {
 
     this.composeWith(require.resolve('../cloudformation'), this.answers);
   }
-
-  async install() {
-    this.yarnInstall();
-  }
 }
