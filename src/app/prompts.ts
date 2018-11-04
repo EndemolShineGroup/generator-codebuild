@@ -1,6 +1,6 @@
 import Generator from 'yeoman-generator';
 
-import filterAndTrim from '@endemolshinegroup/generator-nodejs-ts/generators/lib/filterAndTrim';
+import filterAndTrim from '../lib/filterAndTrim';
 
 const prompts: Generator.Questions = [
   {

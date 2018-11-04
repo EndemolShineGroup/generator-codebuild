@@ -152,14 +152,6 @@
     lodash.padend "^4.6.1"
     word-wrap "^1.2.3"
 
-"@endemolshinegroup/generator-nodejs-ts@^1.10.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@endemolshinegroup/generator-nodejs-ts/-/generator-nodejs-ts-1.11.0.tgz#bf7af21866048fdf14328e9c6de88f49ef7ca58e"
-  integrity sha512-BmQYhYqLEJ1/c1M6a9RMQBjHgcADpx/xo4niQIz5QgTDwjx1l7MyMSuZMltL+eSFDaETU0B00C8QGpnWPF8a9w==
-  dependencies:
-    tslib "^1.9.3"
-    yeoman-generator "^3.1.1"
-
 "@endemolshinegroup/prettier-config@^1":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@endemolshinegroup/prettier-config/-/prettier-config-1.0.0.tgz#6cebb12e530a0c67176c617c536739df55d961c1"

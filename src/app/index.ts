@@ -1,8 +1,6 @@
 import path from 'path';
 import Generator from 'yeoman-generator';
 
-import AbstractGenerator from '@endemolshinegroup/generator-nodejs-ts/generators/lib/AbstractGenerator';
-import configureProjectRoot from '@endemolshinegroup/generator-nodejs-ts/generators/lib/configureProjectRoot';
 import prompts from './prompts';
 
 export default class NodeJsTypeScriptGenerator extends Generator {
@@ -22,7 +20,6 @@ export default class NodeJsTypeScriptGenerator extends Generator {
     this.answers = await this.prompt(prompts);
 
     this.composeWith(require.resolve('../cloudformation'), this.answers);
-    configureProjectRoot((this as unknown) as AbstractGenerator);
   }
 
   async install() {

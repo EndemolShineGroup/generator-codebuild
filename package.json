@@ -34,7 +34,6 @@
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'src/**/*.spec.ts'"
   },
   "dependencies": {
-    "@endemolshinegroup/generator-nodejs-ts": "^1.10.0",
     "cloudform": "^3.3.0",
     "js-yaml": "^3.12.0",
     "tslib": "^1.9.3",
