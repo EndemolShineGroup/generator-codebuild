@@ -29,7 +29,7 @@ export = class CloudFormationGenerator extends Generator {
   writing() {
     const extension = this.options.format;
 
-    this.fs.writeJSON(
+    this.fs.write(
       this.destinationPath(`conf/template.${extension}`),
       createCloudFormationTemplate(
         this.options.projectName,
