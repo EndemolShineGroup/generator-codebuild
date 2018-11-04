@@ -18,6 +18,8 @@ A Yeoman generator for AWS CodeBuild
 
 ## Installation
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/EndemolShineGroup/generator-codebuild.svg)](https://greenkeeper.io/)
+
 ```bash
 yo @endemolshinegroup/codebuild
 ```
