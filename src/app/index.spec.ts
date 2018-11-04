@@ -25,7 +25,7 @@ describe('app', () => {
     });
 
     it('copies all files', () => {
-      assert.file(path.join(OUTPUT_PATH, 'conf', 'template.json'));
+      assert.file(path.join(OUTPUT_PATH, 'conf', 'template.yml'));
       assert.file(path.join(OUTPUT_PATH, 'buildspec.yml'));
     });
   });

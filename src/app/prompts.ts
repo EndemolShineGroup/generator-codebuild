@@ -9,6 +9,13 @@ const prompts: Generator.Questions = [
     name: 'projectName',
     type: 'input',
   },
+  {
+    choices: ['json', 'yml'],
+    default: 'yml',
+    message: 'CloudFormation template format',
+    name: 'format',
+    type: 'list',
+  },
 ];
 
 export default prompts;
