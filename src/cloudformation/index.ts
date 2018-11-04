@@ -1,8 +1,10 @@
 import Generator from 'yeoman-generator';
 
 import createCloudFormationTemplate from '../lib/createCloudFormationTemplate';
+import { OutputFormat } from '../lib/formatOutput';
 
 interface Options {
+  format: OutputFormat;
   projectName: string;
 }
 
@@ -17,12 +19,22 @@ export = class CloudFormationGenerator extends Generator {
       description: 'Project Name: ',
       type: String,
     });
+    this.option('format', {
+      default: 'json',
+      description: 'JSON or YML',
+      type: String,
+    });
   }
 
   writing() {
+    const extension = this.options.format;
+
     this.fs.writeJSON(
-      this.destinationPath('conf/template.json'),
-      createCloudFormationTemplate(this.options.projectName),
+      this.destinationPath(`conf/template.${extension}`),
+      createCloudFormationTemplate(
+        this.options.projectName,
+        this.options.format,
+      ),
     );
   }
 };

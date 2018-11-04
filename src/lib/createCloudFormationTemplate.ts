@@ -1,5 +1,6 @@
 import cloudform, { CodeBuild, Fn, IAM, Refs } from 'cloudform';
-import yaml from 'js-yaml';
+
+import formatOutput, { OutputFormat } from './formatOutput';
 
 export const generateIamRole = () => {
   // tslint:disable:object-literal-sort-keys
@@ -84,17 +85,15 @@ export const generateCodeBuildProject = (projectName: string) => {
   }).dependsOn('CodeBuildIamRole');
 };
 
-export default (projectName: string, inYaml = true) => {
-  const template = JSON.parse(
-    cloudform({
-      Description: `${projectName} build stack`,
-      Resources: {
-        CodeBuildIamPolicy: generateIamPolicy(projectName),
-        CodeBuildIamRole: generateIamRole(),
-        CodeBuildProject: generateCodeBuildProject(projectName),
-      },
-    }),
-  );
+export default (projectName: string, format: OutputFormat = 'json') => {
+  const template = cloudform({
+    Description: `${projectName} build stack`,
+    Resources: {
+      CodeBuildIamPolicy: generateIamPolicy(projectName),
+      CodeBuildIamRole: generateIamRole(),
+      CodeBuildProject: generateCodeBuildProject(projectName),
+    },
+  });
 
-  return inYaml ? yaml.safeDump(template) : template;
+  return formatOutput(template, format);
 };

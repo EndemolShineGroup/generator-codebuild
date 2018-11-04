@@ -14,7 +14,7 @@ describe('app:cloudformation', () => {
     projectName: PROJECT_NAME,
   };
 
-  describe('Generates a CloudFormation template correctly', () => {
+  describe('Generates a CloudFormation template as JSON', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
@@ -27,6 +27,25 @@ describe('app:cloudformation', () => {
 
     it('creates conf/template.yml', () => {
       assert.file(path.join(OUTPUT_PATH, 'conf', 'template.json'));
+    });
+  });
+
+  describe('Generates a CloudFormation template as YML', () => {
+    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
+
+    beforeEach(async () => {
+      return generateWithOptions(__dirname, OUTPUT_PATH, {
+        ...options,
+        format: 'yml',
+      });
+    });
+
+    afterEach(() => {
+      rimraf.sync(OUTPUT_PATH);
+    });
+
+    it('creates conf/template.yml', () => {
+      assert.file(path.join(OUTPUT_PATH, 'conf', 'template.yml'));
     });
   });
 });
