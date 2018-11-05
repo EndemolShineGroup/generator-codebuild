@@ -25,9 +25,9 @@ yo @endemolshinegroup/codebuild
 The above command will generate a CloudFormation template in a file
 named `conf/template.yml` with the following:
 
-- [AWS::IAM::Policy]()
-- [AWS::IAM::Role]()
-- [AWS::CodeBuild::Project]()
+- [AWS::IAM::Policy][link-aws-iam-policy]
+- [AWS::IAM::Role][link-aws-iam-role]
+- [AWS::CodeBuild::Project][link-aws-codebuild-project]
 
 It will also add a `buildspec.yml` to the root of the project.
 
@@ -59,3 +59,6 @@ It will also add a `buildspec.yml` to the root of the project.
 [icon-prettier]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?longCache=true&style=flat-square
 [link-prettier]: https://prettier.io/
 
+[link-aws-iam-policy]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html
+[link-aws-iam-role]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html
+[link-aws-codebuild-project]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html
