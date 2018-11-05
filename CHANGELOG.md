@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/EndemolShineGroup/generator-codebuild/compare/v1.1.0...v1.1.1) (2018-11-05)
+
+
+### Bug Fixes
+
+* **cloudformation:** allow writing raw files instead of only JSON ([ca932cb](https://github.com/EndemolShineGroup/generator-codebuild/commit/ca932cb))
+* **generator:** add format prompt ([efca0b7](https://github.com/EndemolShineGroup/generator-codebuild/commit/efca0b7))
+* **project:** copy templates to build output ([a40463a](https://github.com/EndemolShineGroup/generator-codebuild/commit/a40463a))
+
 # [1.1.0](https://github.com/EndemolShineGroup/generator-codebuild/compare/v1.0.0...v1.1.0) (2018-11-04)
 
 
