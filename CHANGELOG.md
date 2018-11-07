@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/EndemolShineGroup/generator-codebuild/compare/v1.1.1...v1.1.2) (2018-11-07)
+
+
+### Bug Fixes
+
+* **cloudformation:** add Location property to CodeBuild project ([9f9cd6a](https://github.com/EndemolShineGroup/generator-codebuild/commit/9f9cd6a))
+
 ## [1.1.1](https://github.com/EndemolShineGroup/generator-codebuild/compare/v1.1.0...v1.1.1) (2018-11-05)
 
 
