@@ -5,7 +5,7 @@ import { OutputFormat } from '../lib/formatOutput';
 
 interface Options {
   format: OutputFormat;
-  projectName: string;
+  repoSlug: string;
 }
 
 export = class CloudFormationGenerator extends Generator {
@@ -15,13 +15,14 @@ export = class CloudFormationGenerator extends Generator {
     super(args, options);
     this.options = options;
 
-    this.option('projectName', {
-      description: 'Project Name: ',
-      type: String,
-    });
     this.option('format', {
       default: 'json',
       description: 'JSON or YML',
+      type: String,
+    });
+    this.option('repoSlug', {
+      description:
+        'GitHub repo slug: (e.g. EndemolShineGroup/generator-codebuild) ',
       type: String,
     });
   }
@@ -31,10 +32,7 @@ export = class CloudFormationGenerator extends Generator {
 
     this.fs.write(
       this.destinationPath(`conf/template.${extension}`),
-      createCloudFormationTemplate(
-        this.options.projectName,
-        this.options.format,
-      ),
+      createCloudFormationTemplate(this.options.repoSlug, this.options.format),
     );
   }
 };

@@ -1,13 +1,15 @@
 import Generator from 'yeoman-generator';
 
 import filterAndTrim from '../lib/filterAndTrim';
+import validateRepoSlug from '../lib/validateRepoSlug';
 
 const prompts: Generator.Questions = [
   {
     filter: filterAndTrim,
-    message: 'Project Name: ',
-    name: 'projectName',
+    message: 'GitHub repo slug: (e.g. EndemolShineGroup/generator-codebuild)',
+    name: 'repoSlug',
     type: 'input',
+    validate: validateRepoSlug,
   },
   {
     choices: ['json', 'yml'],

@@ -4,9 +4,10 @@ import createCloudFormationTemplate from './createCloudFormationTemplate';
 
 describe('#createCloudFormationTemplate', () => {
   const PROJECT_NAME = 'glasf-bist';
+  const REPO_SLUG = `EndemolShineGroup/${PROJECT_NAME}`;
 
   it('generates a valid CloudFormation template in JSON', () => {
-    const result = JSON.parse(createCloudFormationTemplate(PROJECT_NAME));
+    const result = JSON.parse(createCloudFormationTemplate(REPO_SLUG));
 
     expect(result).toHaveProperty('Resources');
     expect(JSON.stringify(result.Resources.CodeBuildIamPolicy)).toMatch(
@@ -19,7 +20,7 @@ describe('#createCloudFormationTemplate', () => {
 
   it('generates a valid CloudFormation template in YML', () => {
     const result = yaml.safeLoad(
-      createCloudFormationTemplate(PROJECT_NAME, 'yml'),
+      createCloudFormationTemplate(REPO_SLUG, 'yml'),
     );
 
     expect(result).toHaveProperty('Resources');

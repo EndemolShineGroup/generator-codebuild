@@ -61,7 +61,10 @@ export const generateIamPolicy = (projectName: string) => {
   // tslint:enable:object-literal-sort-keys
 };
 
-export const generateCodeBuildProject = (projectName: string) => {
+export const generateCodeBuildProject = (
+  projectName: string,
+  repoSlug: string,
+) => {
   return new CodeBuild.Project({
     Artifacts: {
       Type: 'NO_ARTIFACTS',
@@ -79,19 +82,22 @@ export const generateCodeBuildProject = (projectName: string) => {
     Source: {
       GitCloneDepth: 0,
       InsecureSsl: false,
+      Location: `https://github.com/${repoSlug}`,
       ReportBuildStatus: true,
       Type: 'GITHUB',
     },
   }).dependsOn('CodeBuildIamRole');
 };
 
-export default (projectName: string, format: OutputFormat = 'json') => {
+export default (repoSlug: string, format: OutputFormat = 'json') => {
+  const [, projectName] = repoSlug.split('/');
+
   const template = cloudform({
     Description: `${projectName} build stack`,
     Resources: {
       CodeBuildIamPolicy: generateIamPolicy(projectName),
       CodeBuildIamRole: generateIamRole(),
-      CodeBuildProject: generateCodeBuildProject(projectName),
+      CodeBuildProject: generateCodeBuildProject(projectName, repoSlug),
     },
   });
 

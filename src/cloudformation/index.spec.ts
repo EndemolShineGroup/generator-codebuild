@@ -8,10 +8,10 @@ import assert from 'yeoman-assert';
 import { generateWithOptions } from '../setupTests';
 
 describe('app:cloudformation', () => {
-  const PROJECT_NAME = 'glasf-bist';
+  const REPO_SLUG = 'glasf-bist';
   const options = {
     isPublic: true,
-    projectName: PROJECT_NAME,
+    repoSlug: REPO_SLUG,
   };
 
   describe('Generates a CloudFormation template as JSON', () => {
