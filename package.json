@@ -37,7 +37,7 @@
     "cloudform": "^3.3.0",
     "js-yaml": "^3.12.0",
     "tslib": "^1.9.3",
-    "yeoman-generator": "^3.1.1"
+    "yeoman-generator": "^4.8.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^7",
